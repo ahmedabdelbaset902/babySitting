@@ -613,11 +613,7 @@ max-height: 800px;
 
 @media (max-width: 600px) {
 
-    .top-bar {
 
-        height: 30px;
-
-    }
 
 
     .navbar {
