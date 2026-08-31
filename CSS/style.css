@@ -1,0 +1,1933 @@
+/* =========================================
+   ROOT / COLORS
+========================================= */
+
+:root {
+    --pink: #df3d91;
+    --pink-hover: #cc2d80;
+
+    --blue: #4288c7;
+
+    --dark: #202b3c;
+    --gray: #7d8490;
+
+    --border: #efc8df;
+
+    --white: #ffffff;
+
+    --soft-pink: #fff6fa;
+    --soft-border: #f2edf2;
+
+    --shadow-soft:
+        0 8px 25px rgba(32, 43, 60, 0.08);
+
+    --shadow-card:
+        0 8px 25px rgba(32, 43, 60, 0.07);
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        'Gill Sans',
+        'Gill Sans MT',
+        Calibri,
+        'Trebuchet MS',
+        sans-serif;
+
+    color: var(--dark);
+
+    background: #ffffff;
+
+    direction: rtl;
+
+    overflow-x: hidden;
+
+    padding-top: 70px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--soft-border);
+
+    z-index: 1000;
+
+    box-shadow:
+        0 3px 18px rgba(32, 43, 60, 0.04);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+
+.nav-container {
+    width: min(1390px, calc(100% - 50px));
+
+    height: 70px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   NAVBAR LOGO
+========================================= */
+
+.navbar .logo {
+    width: 120px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    position: relative;
+    z-index: 1002;
+}
+
+.navbar .logo img {
+    width: 130px;
+    height: auto;
+
+    display: block;
+
+    max-width: none;
+}
+
+
+/* =========================================
+   DESKTOP NAV WRAPPER
+========================================= */
+
+.mobile-nav {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 38px;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.nav-links a {
+    color: #303746;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+.nav-links a.active {
+    color: var(--pink);
+}
+
+
+/* =========================================
+   NAV BUTTONS
+========================================= */
+
+.nav-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   NAV BUTTON BASE
+========================================= */
+
+.nav-buttons .btn {
+    min-height: 42px;
+
+    padding: 8px 22px;
+
+    border-radius: 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    border: 1px solid transparent;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-buttons .btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PINK NAV BUTTON
+========================================= */
+
+.nav-buttons .btn-pink {
+    background: var(--pink);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(223, 61, 145, 0.15);
+}
+
+.nav-buttons .btn-pink:hover {
+    background: var(--pink-hover);
+
+    box-shadow:
+        0 10px 24px rgba(223, 61, 145, 0.20);
+}
+
+
+/* =========================================
+   OUTLINE NAV BUTTON
+========================================= */
+
+.nav-buttons .btn-outline {
+    background: #ffffff;
+
+    color: var(--pink);
+
+    border-color: var(--border);
+}
+
+.nav-buttons .btn-outline:hover {
+    background: var(--soft-pink);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #263547;
+
+    font-family: inherit;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 1003;
+
+    box-shadow:
+        0 6px 20px rgba(38, 53, 71, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.mobile-menu-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 25px rgba(38, 53, 71, 0.15);
+}
+
+.mobile-menu-btn:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    width: 100%;
+
+    min-height: 680px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 55%,
+            rgba(255, 255, 255, 0.90),
+            transparent 35%
+        ),
+        linear-gradient(
+            110deg,
+            #fcf6fb 0%,
+            #f7f6fd 48%,
+            #eef5ff 100%
+        );
+}
+
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.hero-container {
+    width: min(1400px, calc(100% - 80px));
+
+    margin: 0 auto;
+
+    padding: 65px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(480px, 650px)
+        minmax(400px, 1fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    direction: ltr;
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.hero-image-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 25px 50px rgba(48, 63, 83, 0.16);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    direction: rtl;
+
+    text-align: right;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-self: end;
+}
+
+.hero-content h1 {
+    color: var(--dark);
+
+    font-size: clamp(32px, 3vw, 44px);
+
+    line-height: 1.45;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    display: inline;
+}
+
+.hero-content p {
+    color: var(--gray);
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    font-weight: 600;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+}
+
+
+/* =========================================
+   HERO BUTTON BASE
+========================================= */
+
+.hero-buttons .btn {
+    min-width: 190px;
+
+    min-height: 48px;
+
+    padding: 10px 24px;
+
+    border-radius: 10px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO PINK BUTTON
+========================================= */
+
+.hero-buttons .btn-pink {
+    background: var(--pink);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 22px rgba(223, 61, 145, 0.14);
+}
+
+.hero-buttons .btn-pink:hover {
+    background: var(--pink-hover);
+}
+
+
+/* =========================================
+   HERO OUTLINE BUTTON
+========================================= */
+
+.hero-buttons .btn-outline {
+    background: #ffffff;
+
+    color: var(--pink);
+
+    border: 1px solid var(--border);
+}
+
+.hero-buttons .btn-outline:hover {
+    background: var(--soft-pink);
+}
+
+
+/* =========================================
+   WHY ALFA
+========================================= */
+
+.why-alfa {
+    width: 100%;
+
+    padding: 75px 0 90px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #fcf8fc 0%,
+            #f8f8fd 50%,
+            #f4f8fd 100%
+        );
+}
+
+
+/* =========================================
+   WHY CONTAINER
+========================================= */
+
+.why-container {
+    width: min(1210px, calc(100% - 50px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    color: var(--dark);
+
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    padding: 0;
+}
+
+.section-heading p {
+    color: #727b89;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    line-height: 1.9;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   WHY GRID
+========================================= */
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px 28px;
+}
+
+
+/* =========================================
+   WHY CARD
+========================================= */
+
+.why-card {
+    min-height: 225px;
+
+    background: #ffffff;
+
+    border: 1px solid #f1dce9;
+
+    border-radius: 16px;
+
+    padding: 38px 45px 35px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    box-shadow:
+        0 4px 15px rgba(31, 43, 60, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #edb7d5;
+
+    box-shadow:
+        0 14px 32px rgba(223, 61, 145, 0.09);
+}
+
+
+/* =========================================
+   WHY ICON
+========================================= */
+
+.why-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--pink);
+}
+
+
+/* =========================================
+   CLOCK ICON
+========================================= */
+
+.icon-clock {
+    width: 39px;
+    height: 39px;
+
+    border: 4px solid var(--pink);
+
+    border-radius: 50%;
+
+    position: relative;
+
+    display: block;
+}
+
+.icon-clock::before {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 13px;
+
+    background: var(--pink);
+
+    border-radius: 3px;
+
+    top: 6px;
+    left: 15px;
+}
+
+.icon-clock::after {
+    content: "";
+
+    position: absolute;
+
+    width: 11px;
+    height: 3px;
+
+    background: var(--pink);
+
+    border-radius: 3px;
+
+    top: 18px;
+    left: 15px;
+
+    transform: rotate(30deg);
+
+    transform-origin: left center;
+}
+
+
+/* =========================================
+   SHIELD ICON
+========================================= */
+
+.icon-shield {
+    width: 35px;
+    height: 39px;
+
+    border: 4px solid var(--pink);
+
+    border-radius: 7px 7px 14px 14px;
+
+    position: relative;
+
+    display: block;
+
+    clip-path: polygon(
+        50% 0,
+        95% 15%,
+        95% 55%,
+        80% 78%,
+        50% 100%,
+        20% 78%,
+        5% 55%,
+        5% 15%
+    );
+}
+
+
+/* =========================================
+   CHECK ICON
+========================================= */
+
+.icon-check {
+    width: 40px;
+    height: 40px;
+
+    border: 4px solid var(--pink);
+
+    border-radius: 50%;
+
+    position: relative;
+
+    display: block;
+}
+
+.icon-check::before {
+    content: "";
+
+    position: absolute;
+
+    width: 19px;
+    height: 9px;
+
+    border-left: 4px solid var(--pink);
+    border-bottom: 4px solid var(--pink);
+
+    transform: rotate(-45deg);
+
+    top: 10px;
+    left: 8px;
+}
+
+
+/* =========================================
+   HEART ICON
+========================================= */
+
+.icon-heart {
+    width: 31px;
+    height: 31px;
+
+    position: relative;
+
+    display: block;
+
+    transform: rotate(-45deg);
+
+    border-left: 4px solid var(--pink);
+    border-bottom: 4px solid var(--pink);
+
+    border-radius: 0 0 0 5px;
+}
+
+.icon-heart::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 18px;
+
+    border: 4px solid var(--pink);
+
+    border-bottom: none;
+
+    border-radius: 20px 20px 0 0;
+
+    top: -18px;
+    left: -4px;
+}
+
+.icon-heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 30px;
+
+    border: 4px solid var(--pink);
+
+    border-left: none;
+
+    border-radius: 0 20px 20px 0;
+
+    top: -4px;
+    right: -18px;
+}
+
+
+/* =========================================
+   WHY CARD TEXT
+========================================= */
+
+.why-card h3 {
+    color: var(--dark);
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    line-height: 1.6;
+
+    margin-bottom: 7px;
+}
+
+.why-card p {
+    color: #777f8c;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    font-weight: 600;
+
+    max-width: 530px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   BOOKING SECTION
+========================================= */
+
+.booking-section {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            110deg,
+            #f8e9f3 0%,
+            #f0e9f5 45%,
+            #e5edfc 100%
+        );
+
+    padding: 70px 20px 80px;
+}
+
+
+/* =========================================
+   BOOKING CONTAINER
+========================================= */
+
+.booking-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.booking-container h1 {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    color: #172334;
+
+    margin-bottom: 7px;
+}
+
+.subtitle {
+    font-size: 16px;
+
+    font-weight: 500;
+
+    color: #637086;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BOOKING CARDS
+========================================= */
+
+.cards {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    max-width: 765px;
+
+    margin: 0 auto;
+}
+
+.booking-card {
+    width: 370px;
+
+    min-height: 211px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 28px 30px 30px;
+
+    box-shadow:
+        0 8px 22px rgba(32, 43, 61, 0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 30px rgba(32, 43, 61, 0.15);
+}
+
+.booking-card h2 {
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color: #182231;
+
+    margin-bottom: 10px;
+}
+
+.booking-card p {
+    width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #657083;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   BOOKING BUTTONS
+   مهم:
+   استخدمنا .booking-card
+   عشان ما نكسرش أزرار الـNavbar
+========================================= */
+
+.booking-card .btn {
+    width: 100%;
+
+    min-height: 40px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-family: "Cairo", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.booking-card .btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   BOOKING PRIMARY
+========================================= */
+
+.booking-card .btn-primary {
+    background: var(--pink);
+
+    color: #ffffff;
+}
+
+.booking-card .btn-primary:hover {
+    background: var(--pink-hover);
+}
+
+
+/* =========================================
+   BOOKING OUTLINE
+========================================= */
+
+.booking-card .btn-outline {
+    background: #ffffff;
+
+    color: var(--pink);
+
+    border: 1px solid #edb9d6;
+}
+
+.booking-card .btn-outline:hover {
+    background: #fff1f8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    width: 100%;
+
+    background: #202b3b;
+
+    color: #ffffff;
+
+    padding: 55px 20px 25px;
+}
+
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+    max-width: 1230px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1fr
+        1.2fr;
+
+    gap: 60px;
+
+    direction: rtl;
+}
+
+
+/* =========================================
+   FOOTER COLUMN
+========================================= */
+
+.footer-column {
+    text-align: right;
+
+}
+
+.footer-column h3 {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+
+    color: #ffffff;
+}
+
+.footer-column p {
+    color: #aeb8c7;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    max-width: 290px;
+}
+
+
+/* =========================================
+   FOOTER LINKS
+========================================= */
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+
+    color: #aeb8c7;
+
+    font-size: 16px;
+
+    transition:
+        color 0.2s ease,
+        padding-right 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+
+    padding-right: 4px;
+}
+
+
+/* =========================================
+   FOOTER LOGO
+   مهم جداً:
+   استخدمنا .footer .logo
+   عشان ما يأثرش على Navbar
+========================================= */
+
+.footer .logo {
+    width: auto;
+    height: auto;
+
+    display: block;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    color: var(--blue);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+    max-width: 1230px;
+
+    margin: 35px auto 0;
+
+    padding-top: 22px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #aeb8c7;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    /* NAVBAR */
+
+    .nav-container {
+        width: calc(100% - 35px);
+
+        gap: 15px;
+    }
+
+    .navbar .logo {
+        width: 105px;
+    }
+
+    .navbar .logo img {
+        width: 125px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    .nav-buttons {
+        gap: 6px;
+    }
+
+    .nav-buttons .btn {
+        padding-left: 14px;
+        padding-right: 14px;
+
+        font-size: 12px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        width: calc(100% - 60px);
+
+        gap: 45px;
+
+        grid-template-columns:
+            minmax(400px, 1fr)
+            minmax(340px, 1fr);
+    }
+
+    .hero-content {
+        max-width: 540px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .hero-buttons .btn {
+        min-width: 165px;
+
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        gap: 40px;
+    }
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 68px;
+    }
+
+    .nav-container {
+        height: 68px;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+
+    /* MOBILE NAV DROPDOWN */
+
+    .mobile-nav {
+        position: absolute;
+
+        top: calc(100% + 8px);
+
+        right: 0;
+        left: 0;
+
+        width: 100%;
+
+        padding: 8px;
+
+        background: #ffffff;
+
+        border:
+            1px solid var(--soft-border);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 14px 35px rgba(0, 0, 0, 0.12);
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        z-index: 1001;
+    }
+
+
+    /* LINKS */
+
+    .mobile-nav .nav-links {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        flex: none;
+    }
+
+    .mobile-nav .nav-links a {
+        width: 100%;
+
+        min-height: 48px;
+
+        padding: 12px 15px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        color: #303746;
+
+        background: #ffffff;
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        text-align: right;
+
+        border-bottom:
+            1px solid #f2edf2;
+    }
+
+    .mobile-nav .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-nav .nav-links a:hover {
+        background: var(--soft-pink);
+
+        color: var(--pink);
+    }
+
+    .mobile-nav .nav-links a.active {
+        color: var(--pink);
+    }
+
+
+    /* BUTTONS */
+
+    .mobile-nav .nav-buttons {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 9px;
+
+        margin-top: 10px;
+
+        padding-top: 10px;
+
+        border-top:
+            1px solid #f2edf2;
+    }
+
+    .mobile-nav .nav-buttons .btn {
+        width: 100%;
+
+        min-height: 45px;
+
+        border-radius: 11px;
+
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        width: calc(100% - 40px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 38px;
+
+        padding: 55px 0 70px;
+
+        direction: rtl;
+    }
+
+    .hero-content {
+        order: 1;
+
+        width: 100%;
+
+        max-width: 680px;
+
+        text-align: right;
+    }
+
+    .hero-image-box {
+        order: 2;
+
+        width: 100%;
+
+        max-width: 680px;
+    }
+
+
+    /* WHY */
+
+    .why-alfa {
+        padding: 65px 0 75px;
+    }
+
+    .why-grid {
+        gap: 20px;
+    }
+
+    .why-card {
+        padding:
+            32px 25px;
+    }
+
+    .why-card h3 {
+        font-size: 22px;
+    }
+
+    .why-card p {
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 64px;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 64px;
+    }
+
+    .nav-container {
+        width: calc(100% - 20px);
+
+        height: 64px;
+
+        gap: 0;
+
+        justify-content: space-between;
+    }
+
+    .navbar .logo {
+        width: auto;
+
+        height: 64px;
+
+        padding: 0;
+
+        justify-content: flex-start;
+    }
+
+    .navbar .logo img {
+        width: 80px;
+    }
+
+    .mobile-menu-btn {
+        width: 43px;
+        height: 43px;
+
+        font-size: 24px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        width: calc(100% - 28px);
+
+        padding: 35px 0 55px;
+
+        gap: 30px;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 27px;
+
+        line-height: 1.55;
+
+        margin-bottom: 16px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+
+        line-height: 2;
+
+        margin-bottom: 23px;
+    }
+
+    .hero-content h1 img {
+        width: 115px !important;
+
+        height: auto;
+
+        vertical-align: middle;
+    }
+
+
+    /* HERO BUTTONS */
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 9px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 46px;
+
+        font-size: 17px;
+    }
+
+    .hero-image {
+        border-radius: 12px;
+    }
+
+
+    /* WHY */
+
+    .why-alfa {
+        padding: 50px 0 60px;
+    }
+
+    .why-container {
+        width: calc(100% - 28px);
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+
+        line-height: 1.45;
+    }
+
+    .section-heading p {
+        font-size: 17px;
+
+        line-height: 2;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .why-card {
+        min-height: 200px;
+
+        padding: 28px 20px;
+
+        border-radius: 13px;
+    }
+
+    .why-card h3 {
+        font-size: 22px;
+    }
+
+    .why-card p {
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+
+    /* BOOKING */
+
+    .booking-section {
+        padding: 50px 15px 55px;
+    }
+
+    .booking-container h1 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .cards {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 17px;
+    }
+
+    .booking-card {
+        width: 100%;
+
+        max-width: 370px;
+
+        padding:
+            25px 20px;
+    }
+
+    .booking-card h2 {
+        font-size: 21px;
+    }
+
+    .booking-card p {
+        font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding:
+            42px 20px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+  
+
+    .footer-column p {
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        font-size: 16px;
+    }
+
+    .footer-column h3 {
+        font-size: 21px;
+    }
+
+    .footer-column ul li a {
+        font-size: 16px;
+    }
+
+    .footer .loga  {
+       width: 100px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+
+        padding-top: 14px;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+        top: 35px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding-top: 62px;
+    }
+
+    .navbar,
+    .nav-container {
+        height: 62px;
+    }
+
+    .navbar .logo img {
+        width: 92px;
+    }
+
+    .mobile-menu-btn {
+        width: 41px;
+        height: 41px;
+
+        font-size: 23px;
+    }
+
+
+    /* HERO */
+
+    .hero-container {
+        width: calc(100% - 22px);
+
+        padding-top: 30px;
+
+        padding-bottom: 45px;
+
+        gap: 26px;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+
+        line-height: 1.6;
+    }
+
+    .hero-content h1 img {
+        width: 103px !important;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+    .hero-buttons .btn {
+        font-size: 16px;
+    }
+
+
+    /* WHY */
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .section-heading p {
+        font-size: 15px;
+    }
+
+    .why-card h3 {
+        font-size: 20px;
+    }
+
+    .why-card p {
+        font-size: 15px;
+    }
+
+
+    /* BOOKING */
+
+    .booking-container h1 {
+        font-size: 23px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-column p {
+        font-size: 15px;
+    
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+}
